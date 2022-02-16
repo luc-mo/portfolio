@@ -1,0 +1,46 @@
+@import 'styles/utils.scss';
+
+.button {
+  @include center-content;
+  width: 22rem;
+  height: 5rem;
+  letter-spacing: 4px;
+  cursor: pointer;
+  font-size: 1.6rem;
+  background-color: #1d1d1d;
+  color: #c50000;
+  border: 1px solid #c50000;
+  box-shadow: 0 0 0 0 #c50000 inset;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    color: #1d1d1d;
+    box-shadow: 50rem 0 0 0 #c50000 inset;
+  }
+}
+
+.nav__button {
+  @include center-content;
+  min-height: 4.5rem;
+  height: 5.4rem;
+  font-size: 1.7rem;
+  text-decoration: none;
+  color: #909096;
+  border-top: 1px solid #282828;
+  border-bottom: 1px solid #282828;
+  &:first-of-type {
+    border-top: 2px solid #282828;
+    margin-top: 5rem;
+  }
+  &:last-of-type {
+    border-bottom: 2px solid #282828;
+    margin-bottom: 2rem;
+  }
+  &:hover {
+    color: #c50000;
+    transition: color 0.3s linear;
+  }
+}
+
+.nav__button--active {
+  color: #c50000;
+}

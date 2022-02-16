@@ -1,0 +1,17 @@
+@import 'styles/utils.scss';
+
+.project {
+  margin: 3.2rem 0;
+  display: grid;
+  grid-gap: 2rem 8rem;
+  grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+  &:first-of-type {
+    margin-top: 5rem;
+  }
+}
+
+.project__text--container {
+  & > p:last-of-type {
+    margin-bottom: 1.6rem;
+  }
+}

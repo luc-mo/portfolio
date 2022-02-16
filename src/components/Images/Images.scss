@@ -1,0 +1,92 @@
+@import 'styles/utils.scss';
+
+.skills__image--container {
+  @include center-content;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  &:first-of-type {
+    opacity: 1;
+  }
+}
+
+.about__image--container {
+  @include center-content;
+  width: 100%;
+  height: 100%;
+}
+
+.projects__image {
+  @include center-content;
+  width: 100%;
+  height: 100%;
+  max-height: 40rem;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.entry__image {
+  @include center-content;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.image--html {
+  background-color: #f16529;
+}
+.image--css {
+  background-color: #1172b8;  
+}
+.image--sass {
+  background-color: #cf649a;
+}
+.image--gsap {
+  background-color: #41850b;
+}
+
+.image--javascript {
+  background-color: #ffca28;
+  & > img {
+    margin-top: 2.5rem;
+    margin-left: 2.5rem;
+  }
+}
+.about__image--javascript {
+  background-color: #ffca28;
+  & > img {
+    margin-left: 6rem;
+    margin-bottom: 1rem;
+  }
+}
+.image--nodejs {
+  background-color: #347233;
+}
+.image--react {
+  background-color: #53c1de;
+}
+.image--redux {
+  background-color: #7046b2;
+}
+
+.image--postgresql {
+  background-color: #336791;
+}
+.image--mongodb {
+  background-color: #40803f;
+}
+.image--sequelize {
+  background-color: #1f4f7f;
+}
+
+.image--arduino {
+  background-color: #168e94;
+}
+.image--git {
+  background-color: #e84e31;
+}
+.image--figma {
+  background-color: #c70c4f;
+}

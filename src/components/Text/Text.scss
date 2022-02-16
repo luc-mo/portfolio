@@ -1,0 +1,30 @@
+@import 'styles/utils.scss';
+
+.p {
+  position: relative;
+  font-size: 1.6rem;
+  margin: 0.8rem 0;
+  &:first-of-type {
+    margin-top: 2em;
+    &::before {
+      @include tags__before('<p>', -24px, -16px);
+    }
+  }
+  &:last-of-type {
+    margin-bottom: 2em;
+    &::after {
+      @include tags__after('</p>', -16px, -30px);
+    }
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: #c50000;
+}
+
+.separator {
+  color: #515152;
+  border: 1px solid #515152;
+  background-color: #515152;
+}

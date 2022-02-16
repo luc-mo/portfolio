@@ -1,0 +1,46 @@
+@import 'styles/utils.scss';
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'Coolvetica';
+  font-weight: 400;
+  position: relative;
+}
+
+.h2, .h3, .h4, .h5, .h6 {
+  color: #c50000;
+}
+
+.span-header {
+  transition: color 1s linear;
+  &:hover {
+    color: #c50000;
+    transition: color 0.2s linear;
+  }
+}
+
+.h1 {
+  font-size: 8.8rem;
+  &:first-of-type:before {
+    @include tags__before('<h1>', -1rem, -1.6rem);
+  }
+  &:last-of-type:after {
+    @include tags__after('</h1>', -1.6rem, -2.2rem);
+  }
+}
+
+.h2 {
+  font-size: 6rem;
+  margin-bottom: 4rem;
+  &::before {
+    @include tags__before('<h2>', -1.6rem, -1.6rem);
+  }
+  &::after {
+    @include tags__after('</h2>', -1.6rem, -2.7rem);
+  }
+}
+
+.home {
+  .h2 {
+    font-size: 8rem;
+  }
+}

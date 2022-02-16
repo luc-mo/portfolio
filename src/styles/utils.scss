@@ -1,0 +1,44 @@
+
+
+@mixin center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin tags__style {
+  font-family: 'La Belle Aurore', cursive;
+  font-weight: bold;
+  font-size: 18px;
+  position: absolute;
+  color: #515152;
+}
+
+@mixin tags($content) {
+  @include tags__style;
+  content: $content;
+}
+
+@mixin tags__before($content, $top, $left) {
+  @include tags($content);
+  top: $top;
+  left: $left;
+  bottom: auto;
+}
+
+@mixin tags__after($content, $left, $bottom) {
+  @include tags($content);
+  top: auto;
+  left: $left;
+  bottom: $bottom;
+}
+
+@mixin inputs {
+  outline: none;
+  border: none;
+  background-color: #2b2b2b;
+  color: #8d8d8d;
+  padding: 0 20px;
+  font-size: 1.6rem;
+  border-radius: 4px;
+}

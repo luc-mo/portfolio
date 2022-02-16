@@ -1,0 +1,9 @@
+export { default as Navbar } from 'pages/Navbar';
+export { default as Home } from 'pages/Home';
+export { default as Skills } from 'pages/Skills';
+export { default as Blog } from 'pages/Blog';
+export { default as Portfolio } from 'pages/Portfolio';
+export { default as Projects } from 'pages/Projects';
+export { default as About } from 'pages/About';
+export { default as Contact } from 'pages/Contact';
+export { default as Entry } from 'pages/Entry';

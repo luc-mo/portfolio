@@ -1,0 +1,1 @@
+export { default as useReducers } from 'hooks/useReducers';

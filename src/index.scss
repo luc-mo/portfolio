@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
+@import url("https://use.typekit.net/how2slx.css");
+
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('./fonts/coolvetica-rg.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  tab-size: 2;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #1d1d1d;
+  color: #eeeeee;
+  font-family: open-sans, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: 0 0 5px rgb(144, 144, 150, 0.5) inset;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c50000;
+  box-shadow: 0 0 5px #1d1d1d inset;
+  border-radius: 10px;
+}

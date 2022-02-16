@@ -1,0 +1,67 @@
+@import 'styles/utils.scss';
+
+.App {
+  background-color: #1d1d1d;
+  position: relative;
+}
+
+.App__tag--top {
+  @include tags__style;
+  top: 1rem;
+  left: 18rem;
+  &::before {
+    @include tags__before('<body>', 2.6rem, 2.6rem);
+  }
+}
+
+.App__tag--bottom {
+  @include tags__style;
+  bottom: 1rem;
+  left: 18rem;
+  &::before {
+    @include tags__after('</body>', 2.6rem, 3rem);
+  }
+}
+
+.home__home-view,
+.home__blog,
+.home__blog-link,
+.portfolio,
+.skills,
+.blog,
+.projects,
+.contact,
+.about,
+.entry {
+  background-image: url('../images/brackets.svg');
+  background-repeat: repeat;
+  position: relative;
+  width: calc(100% - 16rem);
+  min-height: 100vh;
+  margin-left: 16rem;
+  padding: 9rem;
+}
+
+.home {
+  .home__home-view,
+  .home__blog,
+  .portfolio,
+  .skills,
+  .blog,
+  .projects,
+  .contact,
+  .about {
+    padding: 5rem 9rem;
+  }
+  .contact {
+    padding-bottom: 9rem;
+  }
+  .home__blog-link {
+    padding: 0rem 9rem;
+    padding-bottom: 5rem;
+  }
+}
+
+.home__blog, .home__blog-link {
+  min-height: 0;
+}

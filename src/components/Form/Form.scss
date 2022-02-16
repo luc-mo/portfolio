@@ -1,0 +1,39 @@
+@import 'styles/utils.scss';
+
+.form {
+  position: relative;
+  &::before {
+    @include tags__before('<form>', -36px, -16px);
+  }
+  &::after {
+    @include tags__after('</form>', -16px, -36px);
+  }
+}
+
+.input {
+  @include inputs;
+  height: 5rem;
+  &:hover::-webkit-input-placeholder {
+    color: #a00000;
+    transition: color 0.2s linear;
+  }
+  &:focus::-webkit-input-placeholder {
+    color: #a00000;
+    transition: color 0.2s linear;
+  }
+}
+
+.textarea {
+  @include inputs;
+  padding: 2rem;
+  font-family: open-sans, sans-serif;
+  resize: none;
+  &:hover::-webkit-input-placeholder {
+    color: #a00000;
+    transition: color 0.2s linear;
+  }
+  &:focus::-webkit-input-placeholder {
+    color: #a00000;
+    transition: color 0.2s linear;
+  }
+}
