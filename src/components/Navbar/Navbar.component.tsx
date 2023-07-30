@@ -19,9 +19,9 @@ export const Navbar: FC = (): ReactElement => {
 			<NavLink title='Proyectos' to='/proyectos'>
 				Proyectos
 			</NavLink>
-			<NavLink title='Blog' to='/blog'>
+			{/* <NavLink title='Blog' to='/blog'>
 				Blog
-			</NavLink>
+			</NavLink> */}
 			<NavLink title='Github' to='https://github.com/luc-mo' external>
 				<Github />
 			</NavLink>
