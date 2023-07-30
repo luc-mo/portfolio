@@ -8,10 +8,6 @@ export const NavLink = styled(SourceNavLink)`
   text-decoration: none;
   opacity: 0.6;
   transition: opacity 0.2s ease-in-out;
-
-  & > img {
-    height: 100%;
-  }
   
   &.active, &:hover {
     opacity: 1;

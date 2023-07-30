@@ -1,20 +1,25 @@
 import { FC, ReactElement } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import styled from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 
 import { Navbar } from 'components/Navbar'
 import { Home } from 'pages/Home'
 import { Projects } from 'pages/Projects'
+import { useThemeStore } from 'store/themeStore'
 
 export const App: FC = (): ReactElement => {
+	const { theme } = useThemeStore()
+
 	return (
-		<Root>
-			<Navbar />
-			<Routes>
-				<Route path='/' element={<Home />} />
-				<Route path='/proyectos' element={<Projects />} />
-			</Routes>
-		</Root>
+		<ThemeProvider theme={theme}>
+			<Root>
+				<Navbar />
+				<Routes>
+					<Route path='/' element={<Home />} />
+					<Route path='/proyectos' element={<Projects />} />
+				</Routes>
+			</Root>
+		</ThemeProvider>
 	)
 }
 
