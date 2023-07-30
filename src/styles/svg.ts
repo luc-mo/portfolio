@@ -7,6 +7,6 @@ export interface SvgIconProps {
 
 export const SvgIcon = styled.svg<SvgIconProps>`
   ${({ theme, $hasStroke }) =>
-		$hasStroke && `stroke: ${theme.current.iconStroke}`}
+		$hasStroke && `stroke: ${theme.current.iconStroke}`};
   ${({ theme, $hasFill }) => $hasFill && `fill: ${theme.current.iconFill}`}
 `
