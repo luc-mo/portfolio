@@ -7,7 +7,7 @@ export const NavLink = styled(SourceNavLink)`
   font-size: 18px;
   text-decoration: none;
   opacity: 0.6;
-  transition: opacity 0.2s ease-in-out;
+  transition: color 0.3s ease-in-out, opacity 0.2s ease-in-out;
   
   &.active, &:hover {
     opacity: 1;

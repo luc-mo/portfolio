@@ -13,7 +13,7 @@ export const NavItem = styled.span`
   color: ${({ theme }) => theme.current.navUrl};
   font-size: 18px;
   opacity: 0.6;
-  transition: opacity 0.2s ease-in-out;
+  transition: color 0.3s ease-in-out, opacity 0.2s ease-in-out;
 
   &:hover {
     opacity: 1;

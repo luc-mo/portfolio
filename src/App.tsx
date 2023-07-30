@@ -26,4 +26,5 @@ export const App: FC = (): ReactElement => {
 const Root = styled.div`
 	min-height: 100vh;
 	background-color: ${({ theme }) => theme.current.bg};
+	transition: background-color 0.3s ease-in-out;
 `

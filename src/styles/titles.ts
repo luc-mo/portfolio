@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 
 export const H = css`
   color: ${({ theme }) => theme.current.title};
+  transition: color 0.3s ease-in-out;
 `
 
 export const H1 = styled.h1`

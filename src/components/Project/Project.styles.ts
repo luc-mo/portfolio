@@ -10,6 +10,7 @@ export const Project = styled.article`
   padding: 20px;
   background-color: ${({ theme }) => theme.current.projectBg};
   border-radius: 10px;
+  transition: background-color 0.3s ease-in-out;
 `
 
 export const Header = styled.header`
