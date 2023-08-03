@@ -12,6 +12,7 @@ declare module 'styled-components' {
 		iconStroke: string
 		iconFill: string
 		projectBg: string
+		loadingBorder: string
 	}
 
 	export interface Utils {

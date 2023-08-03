@@ -11,6 +11,7 @@ export const lightTheme: Themes = {
 	iconStroke: '#374151',
 	iconFill: '#374151',
 	projectBg: '#f7f7f7',
+	loadingBorder: '#000000',
 }
 
 export const darkTheme: Themes = {
@@ -23,6 +24,7 @@ export const darkTheme: Themes = {
 	iconStroke: '#e5e7eb',
 	iconFill: '#e5e7eb',
 	projectBg: '#121212',
+	loadingBorder: '#ffffff',
 }
 
 export const defaultTheme: DefaultTheme = {
