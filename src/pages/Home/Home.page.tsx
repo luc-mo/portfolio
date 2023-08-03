@@ -8,7 +8,6 @@ import { Link } from 'components/Link'
 import { Github } from 'assets/Github'
 import { LinkedIn } from 'assets/LinkedIn'
 import { Twitter } from 'assets/Twitter'
-import { Instagram } from 'assets/Instagram'
 import { Twitch } from 'assets/Twitch'
 
 export const Home: FC = (): ReactElement => {
@@ -17,11 +16,6 @@ export const Home: FC = (): ReactElement => {
 			<S.HomeContent>
 				<H1>Luciano Morales</H1>
 				<P>Hola, soy Luciano Morales, un desarrollador de software.</P>
-				<P>
-					La idea de sería escribir un texto descriptivo sobre mí, pero no se me
-					ocurre nada, por lo que escribiré cualquier cosa que se me ocurra en
-					este momento.
-				</P>
 				<P>
 					Actualmente trabajo en una empresa costarricense llamada{' '}
 					<Link to='https://qubosystems.com' external>
@@ -60,10 +54,6 @@ export const Home: FC = (): ReactElement => {
 						-
 						<Link to='https://www.twitch.tv/snowdrive1' external>
 							<Twitch /> Twitch
-						</Link>
-						-
-						<Link to='https://www.instagram.com/_snowdrive_' external>
-							<Instagram /> Instagram
 						</Link>
 					</S.MediaContainer>
 				</P>
