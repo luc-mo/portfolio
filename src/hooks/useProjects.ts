@@ -25,5 +25,5 @@ export const useProjects = () => {
 		ProjectService.getProjects().then(setProjects).catch(console.error)
 	}, [loading])
 
-	return { current, others }
+	return { current, others, loading }
 }
