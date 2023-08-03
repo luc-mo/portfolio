@@ -4,7 +4,7 @@ import { P } from 'styles/text'
 import { H3 } from 'styles/titles'
 
 export const Project = styled.article`
-  max-width: 440px;
+  max-width: 526px;
   min-height: 130px;
   width: 100%;
   height: 100%;
