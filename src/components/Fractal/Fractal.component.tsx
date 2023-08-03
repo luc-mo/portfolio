@@ -7,7 +7,11 @@ export const Fractal: FC = (): ReactElement => {
 
 	useEffect(() => {
 		if (!canvasRef.current) return
-		FractalAnimation.initializeCanvas(canvasRef.current)
+		const { clearCanvas } = FractalAnimation.initializeCanvas(canvasRef.current)
+
+		return () => {
+			clearCanvas()
+		}
 	}, [canvasRef.current])
 
 	return (

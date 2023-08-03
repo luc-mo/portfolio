@@ -1,5 +1,11 @@
 export module FractalAnimation {
-	interface StepConstructor {
+	interface ExcecuteValues {
+		lastTime: number
+		branches: Branch[]
+		prevBranches: Branch[]
+	}
+
+	interface BranchConstructor {
 		ctx: CanvasRenderingContext2D
 		x: number
 		y: number
@@ -14,7 +20,7 @@ export module FractalAnimation {
 		static LINE_WIDTH = 1
 		static STROKE_STYLE = '#88888810'
 		static STROKE_LEN = 6
-		static INTERVAL = 1000 / 40
+		static INTERVAL = 1000 / 20
 
 		static COUNTER_THRESHOLD = 7
 		static COUNTER_STEP = 1
@@ -69,19 +75,52 @@ export module FractalAnimation {
 			return { ctx, dpi }
 		}
 
-		static executeBranch = (branch: Branch) => {
-			const step = branch.forward()
-			if (!step) return
+		static executeBranch =
+			({ lastTime, branches, prevBranches }: ExcecuteValues) =>
+			() => {
+				if (performance.now() - lastTime < Constants.INTERVAL) return
 
-			if (step.left) {
-				const newBranch = step.left()
-				requestAnimationFrame(() => Utils.executeBranch(newBranch))
+				lastTime = performance.now()
+				prevBranches = branches
+				branches = []
+
+				prevBranches.forEach((branch) => {
+					if (!branch) return
+					const step = branch.forward()
+
+					if (!step) return
+					if (step.left) branches.push(step.left())
+					if (step.right) branches.push(step.right())
+				})
 			}
 
-			if (step.right) {
-				const newBranch = step.right()
-				requestAnimationFrame(() => Utils.executeBranch(newBranch))
+		static animate = (fn: Function, immediate = true) => {
+			let isActive = false
+			let frameId: number | null = null
+
+			const loop = () => {
+				if (!isActive) return
+				fn()
+				frameId = requestAnimationFrame(loop)
 			}
+
+			const resume = () => {
+				if (!isActive) {
+					isActive = true
+					frameId = requestAnimationFrame(loop)
+				}
+			}
+
+			const pause = () => {
+				isActive = false
+				if (frameId !== null) {
+					cancelAnimationFrame(frameId)
+					frameId = null
+				}
+			}
+
+			if (immediate) resume()
+			return { resume, pause }
 		}
 	}
 
@@ -94,7 +133,7 @@ export module FractalAnimation {
 		private _nx?: number
 		private _ny?: number
 
-		constructor({ ctx, x, y, rad, counter = 0 }: StepConstructor) {
+		constructor({ ctx, x, y, rad, counter = 0 }: BranchConstructor) {
 			this._ctx = ctx
 			this._x = x
 			this._y = y
@@ -162,34 +201,49 @@ export module FractalAnimation {
 		)
 		const { width, height } = canvas
 
-		const top = new Branch({
-			ctx,
-			x: Utils.randomMiddle() * width,
-			y: -5,
-			rad: Constants.R90,
-		})
-		const right = new Branch({
-			ctx,
-			x: width + 5,
-			y: Utils.randomMiddle() * height,
-			rad: Constants.R180,
-		})
-		const bottom = new Branch({
-			ctx,
-			x: Utils.randomMiddle() * width,
-			y: height + 5,
-			rad: -Constants.R90,
-		})
-		const left = new Branch({
-			ctx,
-			x: -5,
-			y: Utils.randomMiddle() * height,
-			rad: 0,
-		})
+		const top = () =>
+			new Branch({
+				ctx,
+				x: Utils.randomMiddle() * width,
+				y: -5,
+				rad: Constants.R90,
+			})
+		const right = () =>
+			new Branch({
+				ctx,
+				x: width + 5,
+				y: Utils.randomMiddle() * height,
+				rad: Constants.R180,
+			})
+		const bottom = () =>
+			new Branch({
+				ctx,
+				x: Utils.randomMiddle() * width,
+				y: height + 5,
+				rad: -Constants.R90,
+			})
+		const left = () =>
+			new Branch({
+				ctx,
+				x: -5,
+				y: Utils.randomMiddle() * height,
+				rad: 0,
+			})
 
-		Utils.executeBranch(top)
-		Utils.executeBranch(right)
-		Utils.executeBranch(bottom)
-		Utils.executeBranch(left)
+		const excecuteValues: ExcecuteValues = {
+			lastTime: performance.now(),
+			branches: [top(), right(), bottom(), left()],
+			prevBranches: [],
+		}
+
+		const { pause } = Utils.animate(Utils.executeBranch(excecuteValues))
+
+		const clearCanvas = () => {
+			pause()
+			ctx.clearRect(0, 0, width, height)
+			excecuteValues.branches = [top(), right(), bottom(), left()]
+		}
+
+		return { clearCanvas }
 	}
 }
