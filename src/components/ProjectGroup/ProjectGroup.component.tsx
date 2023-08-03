@@ -8,20 +8,24 @@ import { ProjectEntity } from 'types/project'
 export interface ProjectGroupProps {
 	title: string
 	projects: ProjectEntity[]
+	loading: boolean
 }
 
 export const ProjectGroup: FC<ProjectGroupProps> = ({
 	title,
 	projects,
+	loading,
 }): ReactElement => {
 	return (
 		<S.ProjectGroup>
 			<H2>{title}</H2>
 			<S.ProjectsContainer>
-				{projects.map((project) => (
-					<Project key={project.id} {...project} />
-				))}
+				{loading ? <S.Loading /> : projects.map(renderProject)}
 			</S.ProjectsContainer>
 		</S.ProjectGroup>
 	)
 }
+
+const renderProject = (project: ProjectEntity) => (
+	<Project key={project.id} {...project} />
+)

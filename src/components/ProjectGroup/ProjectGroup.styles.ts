@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Loading as SourceLoading } from 'styles/utils'
 
 export const ProjectGroup = styled.section`
   display: flex;
@@ -16,4 +17,9 @@ export const ProjectsContainer = styled.div`
   gap: 1.4rem;
   max-width: 1200px;
   width: 100%;
+`
+
+export const Loading = styled(SourceLoading)`
+  max-width: 440px;
+  min-height: 130px;
 `

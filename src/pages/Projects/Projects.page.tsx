@@ -6,13 +6,21 @@ import { ProjectGroup } from 'components/ProjectGroup'
 import { useProjects } from 'hooks'
 
 export const Projects: FC = (): ReactElement => {
-	const { current, others } = useProjects()
+	const { current, others, loading } = useProjects()
 
 	return (
 		<S.Projects>
 			<H1>Proyectos</H1>
-			<ProjectGroup title='Enfoque actual' projects={current} />
-			<ProjectGroup title='Otros proyectos' projects={others} />
+			<ProjectGroup
+				title='Enfoque actual'
+				projects={current}
+				loading={loading}
+			/>
+			<ProjectGroup
+				title='Otros proyectos'
+				projects={others}
+				loading={loading}
+			/>
 		</S.Projects>
 	)
 }

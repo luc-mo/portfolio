@@ -5,6 +5,7 @@ import { H3 } from 'styles/titles'
 
 export const Project = styled.article`
   max-width: 440px;
+  min-height: 130px;
   width: 100%;
   height: 100%;
   padding: 20px;
