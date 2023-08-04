@@ -14,7 +14,7 @@ export const ProjectGroup = styled.section`
 
 export const ProjectsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   place-items: center;
   gap: 1.4rem;
   max-width: 1200px;

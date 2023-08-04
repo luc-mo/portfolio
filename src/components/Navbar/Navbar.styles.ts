@@ -4,8 +4,12 @@ export const Navbar = styled.nav`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 1.6rem;
+  gap: 1.8rem;
   padding: 2rem;
+
+  @media screen and (orientation: portrait) {
+    justify-content: space-evenly;
+  }
 `
 
 export const NavItem = styled.span`
