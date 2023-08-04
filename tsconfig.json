@@ -8,6 +8,7 @@
 			"@config": ["/config/*", "/config"],
 			"@context": ["/context/*", "/context"],
 			"@hooks": ["/hooks/*", "/hooks"],
+			"@locales": ["/locales/*", "/locales"],
 			"@pages": ["/pages/*", "/pages"],
       "@services": ["/services/*", "/services"],
 			"@store": ["/store/*", "/store"],
