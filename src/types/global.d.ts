@@ -13,6 +13,10 @@ declare global {
 
 	export type LinkProps = BaseLinkProps & SourceLinkProps
 	export type NavLinkProps = BaseLinkProps & SourceNavLinkProps
+
+	export interface DynamicKeys {
+		[key: string]: string
+	}
 }
 
 export {}
