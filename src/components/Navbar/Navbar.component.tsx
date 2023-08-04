@@ -1,7 +1,9 @@
 import { FC, ReactElement } from 'react'
 import * as S from './Navbar.styles'
 
+import { useLang } from 'hooks/useLang'
 import { useThemeStore } from 'store/themeStore'
+
 import { NavLink } from 'components/NavLink'
 import { Github } from 'assets/Github'
 import { LinkedIn } from 'assets/LinkedIn'
@@ -10,16 +12,17 @@ import { Sun } from 'assets/Sun'
 
 export const Navbar: FC = (): ReactElement => {
 	const { theme, toggleTheme } = useThemeStore()
+	const { lang, routes, navbar } = useLang()
 
 	return (
 		<S.Navbar>
-			<NavLink title='Inicio' to='/'>
-				Inicio
+			<NavLink title='Inicio' to={`/${lang}`}>
+				{navbar.home}
 			</NavLink>
-			<NavLink title='Proyectos' to='/proyectos'>
-				Proyectos
+			<NavLink title='Proyectos' to={`/${lang}/${routes.projects}`}>
+				{navbar.projects}
 			</NavLink>
-			{/* <NavLink title='Blog' to='/blog'>
+			{/* <NavLink title='Blog' to={`/${lang}/blog`}>
 				Blog
 			</NavLink> */}
 			<NavLink title='Github' to='https://github.com/luc-mo' external>

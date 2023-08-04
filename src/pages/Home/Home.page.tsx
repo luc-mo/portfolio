@@ -1,6 +1,7 @@
 import { FC, ReactElement } from 'react'
 import * as S from './Home.styles'
 
+import { useLang } from 'hooks/useLang'
 import { H1 } from 'styles/titles'
 import { P, Italic } from 'styles/text'
 
@@ -11,34 +12,29 @@ import { Twitter } from 'assets/Twitter'
 import { Twitch } from 'assets/Twitch'
 
 export const Home: FC = (): ReactElement => {
+	const { home, and } = useLang()
+
 	return (
 		<S.Home>
 			<S.HomeContent>
 				<H1>Luciano Morales</H1>
-				<P>Hola, soy Luciano Morales, un desarrollador de software.</P>
+				<P>{home.description}</P>
 				<P>
-					Actualmente trabajo en una empresa costarricense llamada{' '}
+					{home.work}{' '}
 					<Link to='https://qubosystems.com' external>
 						Qubo Systems
 					</Link>
-					, desarrollando aplicaciones web con <Italic>Typescript</Italic>,{' '}
-					<Italic>React</Italic> y <Italic>Node.js</Italic>.
+					, {home.technologies} <Italic>Typescript</Italic>,{' '}
+					<Italic>React</Italic> {and} <Italic>Node.js</Italic>.
 				</P>
 				<P>
-					Durante mi tiempo libre participo activamente en una comunidad de
-					desarrolladores y diseñadores, realizando proyectos{' '}
-					<Italic>open source</Italic> y participando en una variedad de
-					talleres, charlas y eventos.
+					{home.leisure} <Italic>open source</Italic> {home.events}
 				</P>
-				<P>
-					Fuera del mundo de la programación, me gusta mucho la música y
-					practico una variedad de instrumentos, principalmente la guitarra y el
-					piano.
-				</P>
+				<P>{home.hobbies}</P>
 			</S.HomeContent>
 			<S.HomeContent>
 				<P>
-					<S.MediaText>Mis redes</S.MediaText>
+					<S.MediaText>{home.media}</S.MediaText>
 					<S.MediaContainer>
 						<Link title='Github' to='https://github.com/luc-mo' external>
 							<Github /> Github
