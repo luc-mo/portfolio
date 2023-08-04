@@ -9,6 +9,7 @@ import { Github } from 'assets/Github'
 import { LinkedIn } from 'assets/LinkedIn'
 import { Moon } from 'assets/Moon'
 import { Sun } from 'assets/Sun'
+import { Language } from 'assets/Language'
 
 export const Navbar: FC = (): ReactElement => {
 	const { theme, toggleTheme } = useThemeStore()
@@ -35,6 +36,9 @@ export const Navbar: FC = (): ReactElement => {
 			>
 				<LinkedIn />
 			</NavLink>
+			<S.NavItem>
+				<Language />
+			</S.NavItem>
 			<S.NavItem onClick={toggleTheme}>
 				{theme.isDark ? <Sun /> : <Moon />}
 			</S.NavItem>
