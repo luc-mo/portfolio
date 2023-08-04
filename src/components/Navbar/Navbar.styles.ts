@@ -21,7 +21,7 @@ export const NavItem = styled.span`
 
   & > svg {
     opacity: 0.6;
-    transition: opacity 0.2s ease-in-out;
+    transition: stroke 0.3s ease-in-out, opacity 0.2s ease-in-out;
   }
 
   &:hover > svg {
