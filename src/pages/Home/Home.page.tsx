@@ -12,7 +12,7 @@ import { Twitter } from 'assets/Twitter'
 import { Twitch } from 'assets/Twitch'
 
 export const Home: FC = (): ReactElement => {
-	const { home, and } = useLang()
+	const { home, utils } = useLang()
 
 	return (
 		<S.Home>
@@ -25,7 +25,7 @@ export const Home: FC = (): ReactElement => {
 						Qubo Systems
 					</Link>
 					, {home.technologies} <Italic>Typescript</Italic>,{' '}
-					<Italic>React</Italic> {and} <Italic>Node.js</Italic>.
+					<Italic>React</Italic> {utils.and} <Italic>Node.js</Italic>.
 				</P>
 				<P>
 					{home.leisure} <Italic>open source</Italic> {home.events}

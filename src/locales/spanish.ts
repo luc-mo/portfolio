@@ -1,13 +1,12 @@
 import type { Lang } from 'types/locales'
 
 export const spanish: Lang = {
-	and: 'y',
 	navbar: {
 		home: 'Inicio',
 		projects: 'Proyectos',
 	},
 	home: {
-		description: 'Hola, soy Luciano Morales, un desarrollador de software.',
+		description: 'Hola, soy Luciano Morales, desarrollador de software.',
 		work: 'Actualmente trabajo en una empresa costarricense llamada',
 		technologies: 'desarrollando aplicaciones web con',
 		leisure:
@@ -21,6 +20,9 @@ export const spanish: Lang = {
 		title: 'Proyectos',
 		current: 'Enfoque actual',
 		others: 'Otros proyectos',
+	},
+	utils: {
+		and: 'y',
 	},
 	routes: {
 		projects: 'proyectos',

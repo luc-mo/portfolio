@@ -1,5 +1,4 @@
 export interface Lang {
-	and: string
 	navbar: {
 		home: string
 		projects: string
@@ -17,6 +16,9 @@ export interface Lang {
 		title: string
 		current: string
 		others: string
+	}
+	utils: {
+		and: string
 	}
 	routes: {
 		projects: string
