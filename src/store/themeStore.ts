@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { css, type DefaultTheme, type Themes } from 'styled-components'
+import { LocalStorageService } from 'services/localStorage'
 
 export const lightTheme: Themes = {
 	bg: '#ffffff',
@@ -34,10 +35,10 @@ export const darkTheme: Themes = {
 }
 
 export const defaultTheme: DefaultTheme = {
-	isDark: true,
+	isDark: LocalStorageService.isDarkTheme(),
 	light: lightTheme,
 	dark: darkTheme,
-	current: darkTheme,
+	current: LocalStorageService.isDarkTheme() ? darkTheme : lightTheme,
 	utils: {
 		flexCenter: css`
 			display: flex;
@@ -66,11 +67,14 @@ export const useThemeStore = create<ThemeStore>((set) => ({
 
 	// Actions
 	toggleTheme: () =>
-		set(({ theme }) => ({
-			theme: {
-				...theme,
-				isDark: !theme.isDark,
-				current: theme.isDark ? theme.light : theme.dark,
-			},
-		})),
+		set(({ theme }) => {
+			LocalStorageService.toggleTheme(theme.isDark)
+			return {
+				theme: {
+					...theme,
+					isDark: !theme.isDark,
+					current: theme.isDark ? theme.light : theme.dark,
+				},
+			}
+		}),
 }))
