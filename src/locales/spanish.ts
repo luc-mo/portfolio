@@ -22,4 +22,7 @@ export const spanish: Lang = {
 		current: 'Enfoque actual',
 		others: 'Otros proyectos',
 	},
+	routes: {
+		projects: 'proyectos',
+	},
 }

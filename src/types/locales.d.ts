@@ -18,6 +18,9 @@ export interface Lang {
 		current: string
 		others: string
 	}
+	routes: {
+		projects: string
+	}
 }
 
 export interface Locales {

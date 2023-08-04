@@ -23,4 +23,7 @@ export const english: Lang = {
 		current: 'Current focus',
 		others: 'Other projects',
 	},
+	routes: {
+		projects: 'projects',
+	},
 }
