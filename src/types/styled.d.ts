@@ -13,6 +13,7 @@ declare module 'styled-components' {
 		iconFill: string
 		projectBg: string
 		modalBg: string
+		modalBgHover: string
 		divider: string
 		loadingBorder: string
 	}

@@ -10,9 +10,10 @@ export const lightTheme: Themes = {
 	navUrl: '#374151',
 	iconStroke: '#374151',
 	iconFill: '#374151',
-	projectBg: '#f7f7f7',
-	modalBg: '#f7f7f7',
-	divider: 'rgba(0, 0, 0, 0.3)',
+	projectBg: '#f2f2f2',
+	modalBg: '#f2f2f2',
+	modalBgHover: '#f0f0f0',
+	divider: '#C4C4C4',
 	loadingBorder: '#000000',
 }
 
@@ -25,9 +26,10 @@ export const darkTheme: Themes = {
 	navUrl: '#e5e7eb',
 	iconStroke: '#e5e7eb',
 	iconFill: '#e5e7eb',
-	projectBg: '#121212',
-	modalBg: '#121212',
-	divider: 'rgba(255, 255, 255, 0.3)',
+	projectBg: '#161616',
+	modalBg: '#191919',
+	modalBgHover: '#1D1D1D',
+	divider: '#484848',
 	loadingBorder: '#ffffff',
 }
 
