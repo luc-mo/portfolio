@@ -1,7 +1,7 @@
 import { FC, ReactElement } from 'react'
 import * as S from './Home.styles'
 
-import { useLang } from 'hooks/useLang'
+import { useLang } from 'hooks'
 import { H1 } from 'styles/titles'
 import { P, Italic } from 'styles/text'
 
