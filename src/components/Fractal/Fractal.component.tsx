@@ -1,8 +1,8 @@
-import { FC, ReactElement, useEffect, useRef } from 'react'
+import { FC, ReactElement, useEffect, useRef, memo } from 'react'
 import { FractalAnimation } from 'animations/Fractal'
 import * as S from './Fractal.styles'
 
-export const Fractal: FC = (): ReactElement => {
+const UnmemoizedFractal: FC = (): ReactElement => {
 	const canvasRef = useRef<HTMLCanvasElement | null>(null)
 
 	useEffect(() => {
@@ -20,3 +20,5 @@ export const Fractal: FC = (): ReactElement => {
 		</S.FractalContainer>
 	)
 }
+
+export const Fractal = memo(UnmemoizedFractal, () => true)
