@@ -14,12 +14,17 @@ export const Navbar = styled.nav`
 
 export const NavItem = styled.span`
   ${({ theme }) => theme.utils.flexCenter};
+  position: relative;
   color: ${({ theme }) => theme.current.navUrl};
   font-size: 18px;
-  opacity: 0.6;
-  transition: color 0.3s ease-in-out, opacity 0.2s ease-in-out;
+  transition: color 0.3s ease-in-out;
 
-  &:hover {
+  & > svg {
+    opacity: 0.6;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  &:hover > svg {
     opacity: 1;
   }
 `
