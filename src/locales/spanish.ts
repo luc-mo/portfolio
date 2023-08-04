@@ -1,6 +1,10 @@
-import type { Lang } from 'types/locales'
+import type { Translation } from 'types/locales'
 
-export const spanish: Lang = {
+export const spanish: Translation = {
+	langs: [
+		{ name: 'Inglés', lang: 'en' },
+		{ name: 'Español', lang: 'es' },
+	],
 	navbar: {
 		home: 'Inicio',
 		projects: 'Proyectos',

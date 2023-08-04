@@ -1,4 +1,10 @@
 export interface Lang {
+	lang: keyof Locales
+	name: string
+}
+
+export interface Translation {
+	langs: Lang[]
 	navbar: {
 		home: string
 		projects: string
@@ -26,8 +32,8 @@ export interface Lang {
 }
 
 export interface Locales {
-	es: Lang
-	en: Lang
+	es: Translation
+	en: Translation
 }
 
 export type LangParams = {
