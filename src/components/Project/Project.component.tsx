@@ -4,12 +4,16 @@ import * as S from './Project.styles'
 import { Github } from 'assets/Github'
 import { Url } from 'assets/Url'
 import { ProjectEntity } from 'types/project'
+import { LangParams } from 'types/locales'
 
-export const Project: FC<ProjectEntity> = ({
+export type ProjectProps = ProjectEntity & LangParams
+
+export const Project: FC<ProjectProps> = ({
 	title,
 	description,
 	url,
 	repoUrl,
+	lang,
 }): ReactElement => {
 	return (
 		<S.Project>
@@ -26,7 +30,7 @@ export const Project: FC<ProjectEntity> = ({
 					)}
 				</S.LinksContainer>
 			</S.Header>
-			<S.Description>{description.es}</S.Description>
+			<S.Description>{description[lang]}</S.Description>
 		</S.Project>
 	)
 }
