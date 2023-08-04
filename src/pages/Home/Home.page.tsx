@@ -40,19 +40,20 @@ export const Home: FC = (): ReactElement => {
 				<P>
 					<S.MediaText>Mis redes</S.MediaText>
 					<S.MediaContainer>
-						<Link to='https://github.com/luc-mo' external>
+						<Link title='Github' to='https://github.com/luc-mo' external>
 							<Github /> Github
 						</Link>
-						-
-						<Link to='https://www.linkedin.com/in/lucmoralesr' external>
+						<Link
+							title='LinkedIn'
+							to='https://www.linkedin.com/in/lucmoralesr'
+							external
+						>
 							<LinkedIn /> LinkedIn
 						</Link>
-						-
-						<Link to='https://twitter.com/_SnowDrive_' external>
+						<Link title='Twitter' to='https://twitter.com/_SnowDrive_' external>
 							<Twitter /> Twitter
 						</Link>
-						-
-						<Link to='https://www.twitch.tv/snowdrive1' external>
+						<Link title='Twitch' to='https://www.twitch.tv/snowdrive1' external>
 							<Twitch /> Twitch
 						</Link>
 					</S.MediaContainer>

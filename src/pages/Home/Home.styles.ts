@@ -24,5 +24,6 @@ export const MediaText = styled.span`
 export const MediaContainer = styled.span`
   display: flex;
   align-items: center;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 2rem;
 `
