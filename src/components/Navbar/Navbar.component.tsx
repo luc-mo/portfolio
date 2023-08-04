@@ -3,6 +3,7 @@ import * as S from './Navbar.styles'
 
 import { useLang, useGlobalListener, useModal } from 'hooks'
 import { useThemeStore } from 'store/themeStore'
+import { stopPropagation } from 'utils'
 
 import { NavLink } from 'components/NavLink'
 import { NavModal } from 'components/NavModal'
@@ -21,7 +22,7 @@ export const Navbar: FC = (): ReactElement => {
 	const items = useMemo(
 		() =>
 			langs.map(({ name, lang: value }) => {
-				const onClick = () => toggleLang(value)
+				const onClick = stopPropagation(() => toggleLang(value))
 				const active = lang === value
 				return { children: name, active, onClick }
 			}),

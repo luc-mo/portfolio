@@ -1,10 +1,10 @@
-import { FC, Fragment, ReactElement, ReactNode } from 'react'
+import { FC, Fragment, MouseEvent, ReactElement, ReactNode } from 'react'
 import { Divider } from 'styles/utils'
 import * as S from './NavModal.styles'
 
 export interface NavModalItem {
 	children: ReactNode
-	onClick: () => void
+	onClick: (event: MouseEvent) => void
 	active: boolean
 }
 
