@@ -33,7 +33,7 @@ export const Navbar: FC = (): ReactElement => {
 
 	return (
 		<S.Navbar>
-			<NavLink title='Inicio' to={`/${lang}`}>
+			<NavLink title='Inicio' to={`/${lang}`} end>
 				{navbar.home}
 			</NavLink>
 			<NavLink title='Proyectos' to={`/${lang}/${routes.projects}`}>
