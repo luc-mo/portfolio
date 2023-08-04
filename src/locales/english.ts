@@ -1,4 +1,6 @@
-export const english = {
+import type { Lang } from 'types/locales'
+
+export const english: Lang = {
 	and: 'and',
 	navbar: {
 		home: 'Home',

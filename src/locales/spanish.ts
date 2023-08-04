@@ -1,4 +1,6 @@
-export const spanish = {
+import type { Lang } from 'types/locales'
+
+export const spanish: Lang = {
 	and: 'y',
 	navbar: {
 		home: 'Inicio',
