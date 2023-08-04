@@ -12,7 +12,7 @@ export const lightTheme: Themes = {
 	iconFill: '#374151',
 	projectBg: '#f2f2f2',
 	modalBg: '#f2f2f2',
-	modalBgHover: '#f0f0f0',
+	modalBgHover: '#e9e9e9',
 	divider: '#C4C4C4',
 	loadingBorder: '#000000',
 }
@@ -28,7 +28,7 @@ export const darkTheme: Themes = {
 	iconFill: '#e5e7eb',
 	projectBg: '#161616',
 	modalBg: '#191919',
-	modalBgHover: '#1D1D1D',
+	modalBgHover: '#1d1d1d',
 	divider: '#484848',
 	loadingBorder: '#ffffff',
 }

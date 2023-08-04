@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+export interface NavModaItemProps {
+	$active: boolean
+}
+
 export const NavModal = styled.ul`
   position: absolute;
   top: calc(100% + 1rem);
@@ -31,9 +35,11 @@ export const NavModal = styled.ul`
   }
 `
 
-export const NavModalItem = styled.li`
+export const NavModalItem = styled.li<NavModaItemProps>`
   min-width: 100px;
   padding: 10px 1rem;
+  background-color: ${({ $active: isActive, theme }) =>
+		isActive ? theme.current.modalBgHover : 'transparent'};
   white-space: nowrap;
   cursor: default;
   

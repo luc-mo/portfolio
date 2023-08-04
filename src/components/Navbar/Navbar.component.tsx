@@ -1,10 +1,12 @@
-import { FC, ReactElement } from 'react'
+import { FC, ReactElement, useMemo } from 'react'
 import * as S from './Navbar.styles'
 
-import { useLang } from 'hooks/useLang'
+import { useLang, useGlobalListener, useModal } from 'hooks'
 import { useThemeStore } from 'store/themeStore'
 
 import { NavLink } from 'components/NavLink'
+import { NavModal } from 'components/NavModal'
+
 import { Github } from 'assets/Github'
 import { LinkedIn } from 'assets/LinkedIn'
 import { Moon } from 'assets/Moon'
@@ -13,7 +15,20 @@ import { Language } from 'assets/Language'
 
 export const Navbar: FC = (): ReactElement => {
 	const { theme, toggleTheme } = useThemeStore()
-	const { lang, routes, navbar } = useLang()
+	const { lang, langs, routes, navbar, toggleLang } = useLang()
+	const { isOpen, close, toggle } = useModal<HTMLUListElement>()
+
+	const items = useMemo(
+		() =>
+			langs.map(({ name, lang: value }) => {
+				const onClick = () => toggleLang(value)
+				const active = lang === value
+				return { children: name, active, onClick }
+			}),
+		[lang, langs, toggleLang]
+	)
+
+	useGlobalListener('click', close)
 
 	return (
 		<S.Navbar>
@@ -36,8 +51,9 @@ export const Navbar: FC = (): ReactElement => {
 			>
 				<LinkedIn />
 			</NavLink>
-			<S.NavItem>
+			<S.NavItem onClick={toggle}>
 				<Language />
+				{isOpen && <NavModal items={items} />}
 			</S.NavItem>
 			<S.NavItem onClick={toggleTheme}>
 				{theme.isDark ? <Sun /> : <Moon />}
