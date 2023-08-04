@@ -1,13 +1,11 @@
 import { useMemo } from 'react'
 import { useParams } from 'react-router-dom'
 import { locales } from 'locales'
-import { Locales } from 'types/locales'
+import { Lang, LangParams } from 'types/locales'
 
-export type LangParams = {
-	lang: keyof Locales
-}
+export type UseLang = Lang & LangParams
 
-export const useLang = () => {
+export const useLang = (): UseLang => {
 	const { lang: paramLang } = useParams<LangParams>()
 	const lang = useMemo(() => paramLang!, [paramLang])
 	const translations = useMemo(() => locales[lang], [lang])

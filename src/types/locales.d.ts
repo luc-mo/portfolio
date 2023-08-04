@@ -27,3 +27,7 @@ export interface Locales {
 	es: Lang
 	en: Lang
 }
+
+export type LangParams = {
+	lang: keyof Locales
+}
