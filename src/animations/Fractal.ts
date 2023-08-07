@@ -18,7 +18,7 @@ export module FractalAnimation {
 		static R90 = Math.PI / 2
 		static R15 = Math.PI / 12
 		static LINE_WIDTH = 1
-		static STROKE_STYLE = '#88888810'
+		static STROKE_STYLE = '#88888825'
 		static STROKE_LEN = 6
 		static INTERVAL = 1000 / 20
 
@@ -204,29 +204,29 @@ export module FractalAnimation {
 		const top = () =>
 			new Branch({
 				ctx,
-				x: Utils.randomMiddle() * width,
+				x: Utils.randomMiddle() * window.innerWidth,
 				y: -5,
 				rad: Constants.R90,
 			})
 		const right = () =>
 			new Branch({
 				ctx,
-				x: width + 5,
-				y: Utils.randomMiddle() * height,
+				x: window.innerWidth - Constants.R180 + 5,
+				y: Utils.randomMiddle() * window.innerHeight,
 				rad: Constants.R180,
 			})
 		const bottom = () =>
 			new Branch({
 				ctx,
-				x: Utils.randomMiddle() * width,
-				y: height + 5,
+				x: Utils.randomMiddle() * window.innerWidth,
+				y: window.innerHeight + 5,
 				rad: -Constants.R90,
 			})
 		const left = () =>
 			new Branch({
 				ctx,
-				x: -5,
-				y: Utils.randomMiddle() * height,
+				x: -5 - Constants.R180,
+				y: Utils.randomMiddle() * window.innerHeight,
 				rad: 0,
 			})
 
