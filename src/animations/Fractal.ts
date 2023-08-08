@@ -86,11 +86,14 @@ export module FractalAnimation {
 
 				prevBranches.forEach((branch) => {
 					if (!branch) return
-					const step = branch.forward()
 
-					if (!step) return
-					if (step.left) branches.push(step.left())
-					if (step.right) branches.push(step.right())
+					if (Utils.random() < 0.5) branches.push(branch)
+					else {
+						const step = branch.forward()
+						if (!step) return
+						if (step.left) branches.push(step.left())
+						if (step.right) branches.push(step.right())
+					}
 				})
 			}
 
